@@ -23,7 +23,6 @@ Momentum Observer is a state estimation technique widely used in physical Human-
 
 - **MuJoCo Simulation**: High-fidelity physics simulation of UR10e robot
 - **Disturbance Torque Estimation**: Detect external forces acting on the robot using momentum observer
-- **Collision Detection**: Identify and respond to collisions using FDI (Fault Detection and Isolation)
 - **PID Control**: Joint-level trajectory tracking control
 - **Visualization**: Real-time plotting of trajectories, torques, and disturbances
 - **Dynamic Model**: Utilize UR10e dynamics for accurate computation
