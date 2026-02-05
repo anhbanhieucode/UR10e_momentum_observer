@@ -58,7 +58,7 @@ With 20Nm external torque applied to the Joint 2: Elbow
 
 ## System Requirements
 
-- **Operating System**: Ubuntu 20.04+, or macOS 10.15+
+- **Operating System**: Ubuntu 20.04+
 - **Python**: Version 3.8 or higher (recommended Python 3.9 or 3.10)
 - **RAM**: Minimum 4GB (8GB recommended for smooth MuJoCo simulation)
 - **Storage**: At least 2GB free space
@@ -87,24 +87,14 @@ cd UR10e_momentum_observer
 
 #### Create virtual environment:
 
-**On Linux/macOS:**
+**On Linux:**
 ```bash
 python3 -m venv venv
 ```
 
 #### Activate virtual environment:
 
-**On Windows (Command Prompt):**
-```bash
-venv\Scripts\activate
-```
-
-**On Windows (PowerShell):**
-```bash
-venv\Scripts\Activate.ps1
-```
-
-**On Linux/macOS:**
+**On Linux:**
 ```bash
 source venv/bin/activate
 ```
