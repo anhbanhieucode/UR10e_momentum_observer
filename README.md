@@ -4,8 +4,7 @@ This project implements a momentum observer algorithm for the UR10e robot to det
 
 Full report can be found here:
 
-
-[6DOF_dynamics_ver3.pdf](https://github.com/user-attachments/files/25088080/6DOF_dynamics_ver3.pdf)
+[6DOF_dynamics_ver4.pdf](https://github.com/user-attachments/files/25101964/6DOF_dynamics_ver4.pdf)
 
 ## Table of Contents
 
@@ -78,7 +77,6 @@ sudo apt install python3.10 python3.10-venv python3-pip
 
 ### 2. Creating Virtual Environment
 
-A virtual environment isolates project dependencies and prevents conflicts with other Python packages on your system.
 
 #### Clone the repository:
 
@@ -111,7 +109,7 @@ venv\Scripts\Activate.ps1
 source venv/bin/activate
 ```
 
-After activation, you will see `(venv)` at the beginning of your command prompt.
+After activation,  `(venv)` will appear at the beginning of the command prompt.
 
 ### 3. Installing Dependencies
 
@@ -247,7 +245,7 @@ The `main.py` file includes:
 
 ### Key Parameters
 
-You can modify these parameters in `main.py`:
+Modify parameters in `main.py`:
 
 - **PID Gains**: 
   - `kp`: Proportional gains for each joint
