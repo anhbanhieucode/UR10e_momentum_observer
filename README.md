@@ -2,6 +2,11 @@
 
 This project implements a momentum observer algorithm for the UR10e robot to detect collisions and estimate disturbance torques in industrial robot control.
 
+Full report can be found here:
+
+
+[6DOF_dynamics_ver3.pdf](https://github.com/user-attachments/files/25088080/6DOF_dynamics_ver3.pdf)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -30,18 +35,26 @@ Momentum Observer is a state estimation technique widely used in physical Human-
 ## Preview result
 
 Video demo:
-https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/CTC_show.mp4
-
-Circular trajectory tracking:
-https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/circular%20trajectory%20tracking.jpg
-
-Joint space trajectory tracking
-https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/trajectory_tracking.jpg
-
-Momentum observer:
-https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/Momentum_observer.jpg
+https://github.com/user-attachments/assets/6fc0f539-7193-48d4-a9d2-060c1b04d2bb
 
 
+**Circular trajectory tracking:** 
+
+
+![circular trajectory tracking](https://github.com/user-attachments/assets/a344ed86-e396-4000-9071-9599c0bc1d51)
+
+**Joint space trajectory tracking**
+
+
+![trajectory_tracking](https://github.com/user-attachments/assets/fede15b5-970d-447b-9d91-6501f0807c47)
+
+**Momentum observer:**
+
+
+With 20Nm external torque applied to the Joint 2: Elbow 
+
+
+![Momentum_observer](https://github.com/user-attachments/assets/bc0d3566-6b2a-45e6-becd-2d1c52e6752d)
 
 
 ## System Requirements
