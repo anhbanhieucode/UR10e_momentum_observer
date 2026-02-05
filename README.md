@@ -154,6 +154,8 @@ matplotlib>=3.7.0
 
 ```
 UR10e_momentum_observer/
+|
+├── UR10_MATLAB                  #File matlab used to calculate M , C , G and Inverse kinematic of UR10e 6DOF robot
 │
 ├── __pycache__/                 # Python cache directory (auto-generated)
 │
