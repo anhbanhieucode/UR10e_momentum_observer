@@ -27,6 +27,23 @@ Momentum Observer is a state estimation technique widely used in physical Human-
 - **Visualization**: Real-time plotting of trajectories, torques, and disturbances
 - **Dynamic Model**: Utilize UR10e dynamics for accurate computation
 
+## Preview result
+
+Video demo:
+https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/CTC_show.mp4
+
+Circular trajectory tracking:
+https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/circular%20trajectory%20tracking.jpg
+
+Joint space trajectory tracking
+https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/trajectory_tracking.jpg
+
+Momentum observer:
+https://github.com/anhbanhieucode/UR10e_momentum_observer/blob/main/image_video/Momentum_observer.jpg
+
+
+
+
 ## System Requirements
 
 - **Operating System**: Ubuntu 20.04+, or macOS 10.15+
