@@ -33,6 +33,8 @@ Momentum Observer is a state estimation technique widely used in physical Human-
 
 ## Preview result
 
+The scenario for collision detection is to detect external force applied on a random joint (in this case joint2 ) when the robot manipulator is tracking a circular trajectory at the end effector
+
 Video demo:
 https://github.com/user-attachments/assets/6fc0f539-7193-48d4-a9d2-060c1b04d2bb
 
