@@ -31,6 +31,7 @@ Momentum Observer is a state estimation technique using difference in momentum w
 
 ## Preview result
 The simulation will be divided into two scenarios for collision detection:
+
 Scenario 1: The experiment for collision detection is to detect external force applied on a random joint (in this case joint2 ) 
 
 Scenario 2: Using  Fault Detection and Isolation observer for emergency stop after an external obstacle collided with the robot 
