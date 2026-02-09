@@ -43,7 +43,7 @@ w: angular velocity
 Inverse kinematic to joint trajectory is in IK_ur10e.py
 
 - **Visualization**: Real-time plotting of trajectories, torques, and disturbances
-- **Dynamic Model**: Utilize UR10e dynamics for accurate computation
+- **Dynamic Model**: Utilize UR10e dynamics calculated on Matlab 
 
 ## Preview result
 The simulation will be divided into two scenarios for collision detection:
