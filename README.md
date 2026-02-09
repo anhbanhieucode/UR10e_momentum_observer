@@ -17,13 +17,11 @@ Full report can be found here:
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [Theory](#theory)
-- [References](#references)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
 
-Momentum Observer is a state estimation technique widely used in physical Human-Robot Interaction (pHRI). This project implements momentum observer and collision detection algorithms for the UR10e robot using MuJoCo physics simulation. The project provides:
+Momentum Observer is a state estimation technique using difference in momentum with estimated dynamic models of the system. This project implements momentum observer and collision detection algorithms for the UR10e robot using MuJoCo physics simulation. The project provides:
 
 - **MuJoCo Simulation**: High-fidelity physics simulation of UR10e robot
 - **Disturbance Torque Estimation**: Detect external forces acting on the robot using momentum observer
@@ -32,30 +30,52 @@ Momentum Observer is a state estimation technique widely used in physical Human-
 - **Dynamic Model**: Utilize UR10e dynamics for accurate computation
 
 ## Preview result
+The simulation will be divided into two scenarios for collision detection:
+Scenario 1: The experiment for collision detection is to detect external force applied on a random joint (in this case joint2 ) 
 
-The scenario for collision detection is to detect external force applied on a random joint (in this case joint2 ) when the robot manipulator is tracking a circular trajectory at the end effector
+Scenario 2: Using  Fault Detection and Isolation observer for emergency stop after an external obstacle collided with the robot 
+
+The end effector of UR10e robot is setup to follow a circular trajectory while performing each experiment
+
+**Scenario 1: Collision detection**
 
 Video demo:
-https://github.com/user-attachments/assets/6fc0f539-7193-48d4-a9d2-060c1b04d2bb
+
+https://github.com/user-attachments/assets/d82cd402-5e8b-4610-a82b-3333e68670f7
 
 
-**Circular trajectory tracking:** 
+Circular trajectory tracking:
 
 
 ![circular trajectory tracking](https://github.com/user-attachments/assets/a344ed86-e396-4000-9071-9599c0bc1d51)
 
-**Joint space trajectory tracking**
+Joint space trajectory tracking
 
 
 ![trajectory_tracking](https://github.com/user-attachments/assets/fede15b5-970d-447b-9d91-6501f0807c47)
 
-**Momentum observer:**
+Momentum observer:
 
 
 With 20Nm external torque applied to the Joint 2: Elbow 
 
 
 ![Momentum_observer](https://github.com/user-attachments/assets/bc0d3566-6b2a-45e6-becd-2d1c52e6752d)
+
+**Scenario 2: FDI observer:**
+
+Video demo:
+
+https://github.com/user-attachments/assets/3d6e3b9b-97c6-4082-83a2-4c50aaf57b1e
+
+
+A red sphere is dropped to the robot, caused collision. After residual momentum was above a threshold, the robot stopped immediately.
+
+![Residual_observer](https://github.com/user-attachments/assets/03c5f789-5ccb-4bab-be2a-f548b3254177)
+
+Joint trajectory at collision
+
+![Joint_position_when_collision_happend](https://github.com/user-attachments/assets/fbe30a96-9683-4f2f-a7a0-00e338f8fb59)
 
 
 ## System Requirements
