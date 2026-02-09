@@ -1,5 +1,5 @@
 # UR10e Momentum Observer
-
+**Note:** New version with scenario_2 is updated on branch scenario_2
 This project implements a momentum observer algorithm for the UR10e robot to detect collisions and estimate disturbance torques in industrial robot control.
 
 Full report can be found here:
