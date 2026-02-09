@@ -343,10 +343,9 @@ deactivate
 
 This project is distributed under the MIT License. See `LICENSE` file for more details.
 
-##Contact
+## Contact
 
 For any questions, please contact via email:
 hieuvanminhtran244@gmail.com
----
 
 **Note**: This project uses MuJoCo for physics simulation. To connect with a real UR10e robot, additional libraries and communication protocols (such as `python-urx` or ROS) would need to be integrated. Always ensure safety measures when working with real robots.
