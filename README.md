@@ -27,6 +27,21 @@ Momentum Observer is a state estimation technique using difference in momentum w
 - **MuJoCo Simulation**: High-fidelity physics simulation of UR10e robot
 - **Disturbance Torque Estimation**: Detect external forces acting on the robot using momentum observer
 - **PID Control**: Joint-level trajectory tracking control
+
+The trajectory that the End-Effector is tracking is a circular trajectory on XY plane with formular:
+```
+x = cx + R.cos(w.t)
+y = cy + R.sin(w.t)
+z = z_const
+```
+With:
+```
+R: Radius
+(cx,cy) : Center of the circular trajectory
+w: angular velocity
+```
+Inverse kinematic to joint trajectory is in IK_ur10e.py
+
 - **Visualization**: Real-time plotting of trajectories, torques, and disturbances
 - **Dynamic Model**: Utilize UR10e dynamics for accurate computation
 
@@ -68,15 +83,13 @@ With 20Nm external torque applied to the Joint 2: Elbow
 
 Video demo:
 
-https://github.com/user-attachments/assets/3d6e3b9b-97c6-4082-83a2-4c50aaf57b1e
+https://github.com/user-attachments/assets/d7d60e00-117c-43d1-b311-53ebb93edd3e
 
-
-A red sphere was dropped onto the robot, caused collision. After residual momentum was above a threshold, the robot stopped immediately.
+A red cylinder object was collidied onto the robot. After residual momentum was above a threshold, the robot stopped immediately.
 
 Joint trajectory at collision
 
-![Joint_position_when_collision_happend](https://github.com/user-attachments/assets/fbe30a96-9683-4f2f-a7a0-00e338f8fb59)
-
+![FDI_new_joint](https://github.com/user-attachments/assets/bc8b0e65-fc56-4a52-9d43-9e85fcb46a79)
 
 ## System Requirements
 
@@ -280,7 +293,18 @@ Modify parameters in `main.py`:
 The simulation will:
 1. Load the UR10e model
 2. Initialize controllers and observers
-3. Generate trajectory
+3. Generate circular trajectory:
+```
+x = cx + R.cos(w.t)
+y = cy + R.sin(w.t)
+z = z_const
+```
+With:
+```
+R: Radius
+(cx,cy) : Center of the circular trajectory
+w: angular velocity
+```
 4. Run MuJoCo simulation
 5. Apply collision forces if configured
 6. Plot results (joint positions, torques, disturbances)
