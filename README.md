@@ -221,9 +221,13 @@ Make sure all the required Python modules are in the same directory as `main.py`
 - `error.py`
 
 ### Basic execution:
-
+To run scenario 1:
 ```bash
-python main.py
+python3 main.py
+```
+To run scenario 2:
+```bash
+python3 main_FDI.py
 ```
 
 ### Program Flow
@@ -326,46 +330,6 @@ The program automatically generates plots:
 1. **Disturbance Torque vs Time**: Display disturbance torque over time and show the performance of observer
 2. **Joint Positions**: Position of all joints to follow predefined trajectory
 
-
-## Troubleshooting
-
-### Common Errors:
-
-**1. ModuleNotFoundError: No module named 'mujoco'**
-```bash
-# Make sure virtual environment is activated
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-
-# Install MuJoCo
-pip install mujoco
-```
-
-**2. FileNotFoundError: scene.xml not found**
-```bash
-# Ensure the UR10e model file exists at:
-# universal_robots_ur10e/scene.xml
-# Check the xml_path in main.py matches your directory structure
-```
-
-**3. Import Error with local modules (controllers, visualizer, etc.)**
-```bash
-# Make sure you're running from the project root directory
-cd UR10e_momentum_observer
-python main.py
-```
-
-**4. MuJoCo rendering issues on Linux**
-```bash
-# Install required graphics libraries
-sudo apt-get install libgl1-mesa-glx libglew-dev
-```
-
-**5. NumPy compatibility issues**
-```bash
-# Update NumPy to a compatible version
-pip install --upgrade numpy
-```
 
 ### Deactivate virtual environment:
 
