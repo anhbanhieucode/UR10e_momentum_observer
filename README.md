@@ -71,7 +71,7 @@ Video demo:
 https://github.com/user-attachments/assets/3d6e3b9b-97c6-4082-83a2-4c50aaf57b1e
 
 
-A red sphere is dropped to the robot, caused collision. After residual momentum was above a threshold, the robot stopped immediately.
+A red sphere was dropped onto the robot, caused collision. After residual momentum was above a threshold, the robot stopped immediately.
 
 ![Residual_observer](https://github.com/user-attachments/assets/03c5f789-5ccb-4bab-be2a-f548b3254177)
 
