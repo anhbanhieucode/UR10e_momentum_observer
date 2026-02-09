@@ -19,7 +19,7 @@ xml_path = str(base / "UR10e_observer/universal_robots_ur10e/scene.xml")
 
 def main():
     # 1. CẤU HÌNH
-    residual_threshold = 25.0 
+    residual_threshold = 20.0 
     is_emergency_stop = False 
     q_collision = None  # Lưu vị trí tại thời điểm va chạm
 
@@ -39,10 +39,10 @@ def main():
 
     traj_gen = TrajectoryGenerator(dt=DT)
     
-    CENTER = (0.1, -0.45)
+    CENTER = (0.4, -0.3)
     RADIUS = 0.25
     Z_HEIGHT = 0.3
-    DURATION = 5.0
+    DURATION = 4.0
     
     q_data, dq_data = traj_gen.generate_circle(
         center=CENTER, radius=RADIUS, z_height=Z_HEIGHT, duration=DURATION
@@ -64,10 +64,17 @@ def main():
 
     theta_arc = np.linspace(0, 2*np.pi, len(q_data))
     SIM_DURATION = 7.0
-    SKIP_STEPS = 100  # Bỏ qua nhiễu khởi động
+    SKIP_STEPS = 150  # Bỏ qua nhiễu khởi động
     step_count = 0    
 
     print(f"\n SIMULATION START ({SIM_DURATION}s)...")
+
+    # Tìm địa chỉ vận tốc của khớp trượt Y
+    joint_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, "obstacle_y")
+    velocity_addr = model.jnt_dofadr[joint_id]
+
+    # Gán vận tốc 0.2 m/s
+    data.qvel[velocity_addr] = -0.3
 
     # 3. VÒNG LẶP MÔ PHỎNG
     with mujoco.viewer.launch_passive(model, data) as viewer:

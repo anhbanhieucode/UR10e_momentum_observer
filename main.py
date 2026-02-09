@@ -46,8 +46,8 @@ def main():
     traj_gen = TrajectoryGenerator(dt=DT)
     
     # Sinh quỹ đạo hình tròn
-    CENTER = (0.1, -0.55)
-    RADIUS = 0.15
+    CENTER = (0.4, -0.3)
+    RADIUS = 0.25
     Z_HEIGHT = 0.3
     DURATION = 5.0
     
@@ -79,7 +79,7 @@ def main():
     # Tính lại theta cho việc logging
     theta_arc = np.linspace(0, 2*np.pi, len(q_data))
     
-    SIM_DURATION = 10.0
+    SIM_DURATION = 30.0
     print(f"\n SIMULATION START ({SIM_DURATION}s)...")
 
     # 3. VÒNG LẶP MÔ PHỎNG
