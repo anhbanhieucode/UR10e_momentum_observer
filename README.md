@@ -186,6 +186,7 @@ UR10e_momentum_observer/
 ├── controllers.py               # PID Controller and FDI implementations
 ├── error.py                     # Force injection for collision simulation
 ├── main.py                      # Main program file (entry point)
+├── main_FDI.py                  # Main program with external collision on scenario 2 (entry point)
 ├── ur10e_dynamics.py            # UR10e robot dynamics model
 ├── visualizer.py                # Plotting and visualization functions
 │
