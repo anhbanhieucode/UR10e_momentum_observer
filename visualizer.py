@@ -28,6 +28,11 @@ def plot_comparison(logs, config):
         ax.set_title(f'Joint {i}: {joints[i]}')
         ax.set_ylabel('Torque (Nm)')
         ax.grid(True, linestyle=':', alpha=0.6)
+
+        #Hightlight khớp có ngoại lực tác động
+        if i == target_joint:
+            ax.legend(loc='upper right')
+            ax.set_facecolor('#fffdc0')
         
     plt.tight_layout()
     plt.show()
@@ -77,7 +82,9 @@ def plot_trajectory_comparison(logs):
     ax.plot(xyz_real[:, 0], xyz_real[:, 1], xyz_real[:, 2], 'b-', linewidth=2, label='Real')
     
     ax.set_title('Circular Trajectory End Effector Tracking')
-    ax.set_xlabel('X (m)'); ax.set_ylabel('Y (m)'); ax.set_zlabel('Z (m)')
+    ax.set_xlabel('X (m)'); 
+    ax.set_ylabel('Y (m)'); 
+    ax.set_zlabel('Z (m)')
     ax.legend()
     
     # Box aspect
@@ -129,7 +136,7 @@ def plot_residuals(logs, threshold=25.0):
         ax.fill_between(t, r[:, i], -threshold, where=(r[:, i] < -threshold), color='red', alpha=0.3)
         
         ax.set_title(f'Joint {i}: {joints[i]}')
-        ax.set_ylabel('Torque Residual (Nm)')
+        ax.set_ylabel('Residual (Nm)')
         ax.set_xlabel('Time (s)')
         ax.grid(True, linestyle=':', alpha=0.6)
         
