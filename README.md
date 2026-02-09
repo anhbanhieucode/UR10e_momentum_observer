@@ -58,18 +58,16 @@ The end effector of UR10e robot is setup to follow a circular trajectory while p
 
 Video demo:
 
-https://github.com/user-attachments/assets/d82cd402-5e8b-4610-a82b-3333e68670f7
-
+https://github.com/user-attachments/assets/0cd1e487-2934-4969-aeb9-1c22b3084d8e
 
 Circular trajectory tracking:
 
 
-![circular trajectory tracking](https://github.com/user-attachments/assets/a344ed86-e396-4000-9071-9599c0bc1d51)
+![cir_traj](https://github.com/user-attachments/assets/954560eb-b366-4f15-8162-732403725cf1)
 
 Joint space trajectory tracking
 
-
-![trajectory_tracking](https://github.com/user-attachments/assets/fede15b5-970d-447b-9d91-6501f0807c47)
+![7_round_joint_traj](https://github.com/user-attachments/assets/f4625281-54ec-4188-a489-e9d1628b3978)
 
 Momentum observer:
 
@@ -77,7 +75,8 @@ Momentum observer:
 With 20Nm external torque applied to the Joint 2: Elbow 
 
 
-![Momentum_observer](https://github.com/user-attachments/assets/bc0d3566-6b2a-45e6-becd-2d1c52e6752d)
+![7_round_cir_residual](https://github.com/user-attachments/assets/bf0f18b1-3309-450a-8b5f-2d42d03064a3)
+
 
 **Scenario 2: FDI observer:**
 
