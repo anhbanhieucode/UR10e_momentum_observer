@@ -19,12 +19,14 @@ xml_path = str(base / "UR10e_observer/universal_robots_ur10e/scene.xml")
 
 def main():
     # 1. CẤU HÌNH
+
     collision_config = {
         'joint': 1,      # Khớp va chạm
         'start': 3.0,    # Thời gian bắt đầu
         'end': 5.0,      # Thời gian kết thúc
-        'mag': 0.0       # Lực tác động (Nm)
+        'mag': 20.0       # Lực tác động (Nm)
     }
+
 
     print(f"Loading MuJoCo: {xml_path}")
     model = mujoco.MjModel.from_xml_path(xml_path)
@@ -44,9 +46,9 @@ def main():
     traj_gen = TrajectoryGenerator(dt=DT)
     
     # Sinh quỹ đạo hình tròn
-    CENTER = (0.4, -0.3)
-    RADIUS = 0.25
-    Z_HEIGHT = 0.4
+    CENTER = (0.1, -0.55)
+    RADIUS = 0.15
+    Z_HEIGHT = 0.3
     DURATION = 5.0
     
     q_data, dq_data = traj_gen.generate_circle(

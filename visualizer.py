@@ -11,6 +11,7 @@ def plot_comparison(logs, config):
     
     fig, axs = plt.subplots(3, 2, figsize=(15, 10))
     fig.suptitle(f'Momentum Observer (Impact on Joint {target_joint})', fontsize=16)
+    #fig.suptitle(f'Fault Detection and Isolation (FDI) observer', fontsize=16)
     
     joints = ["Shoulder Pan", "Shoulder Lift", "Elbow", "Wrist 1", "Wrist 2", "Wrist 3"]
     
@@ -28,11 +29,6 @@ def plot_comparison(logs, config):
         ax.set_ylabel('Torque (Nm)')
         ax.grid(True, linestyle=':', alpha=0.6)
         
-        # Highlight khớp bị tác động
-        if i == target_joint:
-            ax.legend(loc='upper right')
-            ax.set_facecolor('#fffdc0') # Nền vàng nhạt
-
     plt.tight_layout()
     plt.show()
 
@@ -68,6 +64,7 @@ def plot_IK(logs):
     plt.show()
 
 def plot_trajectory_comparison(logs):
+
     """Vẽ so sánh quỹ đạo End-Effector (Task Space Tracking)"""
     xyz_ref = np.array(logs['xyz_ref'])
     xyz_real = np.array(logs['xyz_real'])
@@ -101,4 +98,47 @@ def plot_trajectory_comparison(logs):
     ax2.text(0.05, 0.9, f'Mean: {mean_error:.2f} mm', transform=ax2.transAxes, bbox=dict(facecolor='yellow', alpha=0.3))
 
     plt.tight_layout()
+    plt.show()
+
+
+def plot_residuals(logs, threshold=25.0):
+    """
+    Vẽ 6 đường Residual (r) từ Momentum Observer để quan sát va chạm.
+    Đánh dấu ngưỡng phát hiện va chạm để dễ dàng đối chiếu.
+    """
+    t = np.array(logs['time'])
+    r = np.array(logs['r_fdi'])
+    
+    fig, axs = plt.subplots(3, 2, figsize=(15, 12))
+    fig.suptitle('Fault Detection and Isolation (FDI) - Momentum Observer Residuals', fontsize=16)
+    
+    joints = ["Shoulder Pan", "Shoulder Lift", "Elbow", "Wrist 1", "Wrist 2", "Wrist 3"]
+    
+    for i in range(6):
+        ax = axs[i//2, i%2]
+        
+        # Vẽ giá trị Residual (r)
+        ax.plot(t, r[:, i], color='darkred', linewidth=2, label=f'Residual r_{i}')
+        
+        # Vẽ đường ngưỡng (Threshold) trên và dưới
+        ax.axhline(y=threshold, color='orange', linestyle='--', alpha=0.7, label='Threshold')
+        ax.axhline(y=-threshold, color='orange', linestyle='--', alpha=0.7)
+        
+        # Tô màu vùng vượt ngưỡng để dễ nhận diện va chạm
+        ax.fill_between(t, r[:, i], threshold, where=(r[:, i] > threshold), color='red', alpha=0.3)
+        ax.fill_between(t, r[:, i], -threshold, where=(r[:, i] < -threshold), color='red', alpha=0.3)
+        
+        ax.set_title(f'Joint {i}: {joints[i]}')
+        ax.set_ylabel('Torque Residual (Nm)')
+        ax.set_xlabel('Time (s)')
+        ax.grid(True, linestyle=':', alpha=0.6)
+        
+        # Tự động điều chỉnh giới hạn Y để thấy rõ đỉnh va chạm
+        max_val = max(np.max(np.abs(r[:, i])), threshold + 10)
+        ax.set_ylim(-max_val, max_val)
+        
+        if i == 0:
+            ax.legend(loc='upper right')
+
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
     plt.show()
