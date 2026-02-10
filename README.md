@@ -364,7 +364,7 @@ deactivate
 
 ## License
 
-This project is distributed under the MIT License. See `LICENSE` file for more details.
+This project is distributed under the MIT License.
 
 ## Contact
 
