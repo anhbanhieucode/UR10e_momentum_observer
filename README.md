@@ -50,7 +50,7 @@ The simulation will be divided into two scenarios for collision detection:
 
 **Scenario 1:** The experiment for collision detection is to detect external force applied on a random joint (in this case joint2 ) 
 
-**Scenario 2:** Using  Fault Detection and Isolation observer for emergency stop after an external obstacle collided with the robot 
+**Scenario 2:** Using  Fault Detection and Isolation observer for emergency stop after an external obstacle collided with the robot (branch scenario_2_ver2.0)
 
 The end effector of UR10e robot is setup to follow a circular trajectory while performing each experiment
 
@@ -79,6 +79,8 @@ With 20Nm external torque applied to the Joint 2: Elbow
 
 
 **Scenario 2: FDI observer:**
+
+Run this on main_FDI.py in branch scenario_2_ver2.0
 
 Video demo:
 
@@ -209,6 +211,7 @@ UR10e_momentum_observer/
 ### Module Descriptions
 
 - **main.py**: Entry point of the program. Loads MuJoCo model, initializes controllers, runs simulation
+- **main_FDI.py**: Main file to run scenario 2 example in branch scenario_2_ver2.0
 - **controllers.py**: Contains `PIDController` class for joint-level control and `FDI` (Fault Detection and Isolation) for collision detection
 - **visualizer.py**: Provides plotting functions including `plot_comparison`, `plot_IK`, and `plot_trajectory_comparison` 
 - **ur10e_dynamics.py**: Implements `get_dynamics()` function that returns the dynamic model (M, C, G matrices) of UR10e
@@ -237,7 +240,7 @@ To run scenario 1:
 ```bash
 python3 main.py
 ```
-To run scenario 2:
+To run scenario 2 (branch scenario_2_ver2.0) :
 ```bash
 python3 main_FDI.py
 ```
