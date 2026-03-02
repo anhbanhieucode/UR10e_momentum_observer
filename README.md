@@ -86,7 +86,7 @@ Video demo:
 
 https://github.com/user-attachments/assets/d7d60e00-117c-43d1-b311-53ebb93edd3e
 
-A red cylinder object was collidied onto the robot. After residual momentum was above a threshold, the robot stopped immediately.
+A red cylinder object was collided onto the robot. After residual momentum was above a threshold, the robot stopped immediately.
 
 Joint trajectory at collision
 
